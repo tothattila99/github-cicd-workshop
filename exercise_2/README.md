@@ -41,3 +41,5 @@ After seeing the workflow run, check the logs of the run. Based on the issues fo
 - pytest: Runs the unit tests in the repository.
    - `pytest exercise_2/test_code.py` Runs the unit tests in the `test_code.py` file.
    - `pytest exercise_2` Runs all the unit tests in the `exercise_2` directory.
+
+test
