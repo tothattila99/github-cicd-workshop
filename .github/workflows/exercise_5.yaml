@@ -23,5 +23,8 @@ jobs:
         if: ${{ steps.echo-message.outputs.out_var == 'TesT' }}
         env:
           output_var: ${{ steps.echo-message.outputs.out_var }}
-
+      - run: echo output "$output_var"
+        shell: bash
+        env:
+          output_var: ${{ steps.echo-message.outputs.out_var }}
 
