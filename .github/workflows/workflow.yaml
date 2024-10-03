@@ -24,5 +24,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: user/app:latest
+          tags: tothatti99/exercise3_dockerapp:latest
           context: exercise_3/
