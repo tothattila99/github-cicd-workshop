@@ -22,9 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-push
     strategy:
+      max-parallel: 1
       matrix:
         environment: [dev, qa, prod]
-        max-parallel: 1
+    environment: 
+      name: ${{ matrix.environment }}
     steps:
       - name: deploy
         run: sleep 5
