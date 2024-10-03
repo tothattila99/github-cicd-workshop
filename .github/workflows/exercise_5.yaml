@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: ./ # Uses an action in the root directory
-        id: repeater
+        id: Repeater
         with:
           in-var: Eren
 
