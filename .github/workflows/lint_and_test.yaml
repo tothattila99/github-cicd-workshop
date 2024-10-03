@@ -13,8 +13,10 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
+    - name: Install dependencies
+      run: pip install pytest
     - name: Running tests
-      run: python exercise_2/test_bad_code.py
+      run: pytest exercise_2/test_bad_code.py
     # Add step to install dependencies
 
   lint:
