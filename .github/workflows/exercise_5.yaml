@@ -15,7 +15,7 @@ jobs:
       - name: Checkout github repository
         uses: actions/checkout@v4
       - uses: ./ # Uses an action in the root directory
-        id: Repeater
+        id: repeater
         with:
           in-var: Eren
 
