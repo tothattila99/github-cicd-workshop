@@ -29,8 +29,10 @@ jobs:
         python-version: '3.12'
     - name: Install Python dependencies
       run: pip install black flake8
-    - name: Running lint
+    - name: Running black
       run: black --check exercise_2/
+    - name: Running flake8
+      run: flake8 exercise_2/
     
     # Complete the lint job configuration
 
