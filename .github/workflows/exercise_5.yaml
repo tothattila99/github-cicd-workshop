@@ -14,17 +14,18 @@ jobs:
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v4
-      - uses: ./ # Uses an action in the root directory
+      - name: repeater
+        uses: ./ # Uses an action in the root directory
         id: Repeater
         with:
           in-var: TesT
       - run: echo output "$output_var"
         shell: bash
-        if: ${{ steps.Repeater.outputs.out_var == 'TesT' }}
+        if: ${{ steps.repeater.outputs.out_var == 'TesT' }}
         env:
-          output_var: ${{ steps.Repeater.outputs.out_var }}
+          output_var: ${{ steps.repeater.outputs.out_var }}
       - run: echo output "$output_var"
         shell: bash
         env:
-          output_var: ${{ steps.Repeater.outputs.out_var }}
+          output_var: ${{ steps.repeater.outputs.out_var }}
 
