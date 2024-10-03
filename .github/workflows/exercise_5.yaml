@@ -19,13 +19,9 @@ jobs:
         id: Repeater
         with:
           in-var: TesT
-      - run: echo output "$output_var"
+      - run: echo output ${{ steps.repeater.outputs.out_var }}
         shell: bash
         if: ${{ steps.repeater.outputs.out_var == 'TesT' }}
-        env:
-          output_var: ${{ steps.repeater.outputs.out_var }}
-      - run: echo output "$output_var"
+      - run: echo output ${{ steps.repeater.outputs.out_var }}
         shell: bash
-        env:
-          output_var: ${{ steps.repeater.outputs.out_var }}
 
