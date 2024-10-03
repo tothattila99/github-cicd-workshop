@@ -1,5 +1,10 @@
 # GitHub Actions Course
 
+Exercise 7:
+<!-- [START BADGES] -->
+<!-- [END BADGES] -->
+
+
 [![Test Status](https://img.shields.io/badge/tests-unknown-lightgrey)](https://github.com/datamindedacademy/github-cicd/actions/workflows/test-and-badge.yaml)
 
 Welcome to the GitHub Actions Course! This repository serves as a guide to help you set up your own repository to explore and learn GitHub Actions independently using your GitHub account.

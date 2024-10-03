@@ -3,6 +3,9 @@ name: Python CI
 on:
   pull_request:
     branches: [master]
+env:
+  test_result: passing-green
+  failing-red
 
 jobs:
   test:
@@ -33,9 +36,18 @@ jobs:
       run: black --check exercise_2/
     - name: Running flake8
       run: flake8 exercise_2/
-    
-    # Complete the lint job configuration
 
-
-
-      
+  badging:
+    runs-on: ubuntu-latest
+    if: ${{ lint.result == 'success' &&  tests.result == 'success' }}
+    needs: [lint, tests]
+    steps:
+      - uses: wow-actions/add-badges@v1
+        with:
+          badges: |
+            [
+              {
+                "badge": "https://img.shields.io/badge/tests-passing-green",
+                "alt": "test"
+              }
+            ]
