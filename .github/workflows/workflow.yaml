@@ -25,4 +25,4 @@ jobs:
         with:
           push: true
           tags: user/app:latest
-          working-directory: exercise_3
+          context: exercise_3/
