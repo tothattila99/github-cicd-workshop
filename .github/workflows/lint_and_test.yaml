@@ -33,6 +33,7 @@ jobs:
       uses: wearerequired/lint-action@v2
       with:
         black: true
+        black_args: "--check"
         flake8: true
     # Complete the lint job configuration
 
