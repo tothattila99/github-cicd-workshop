@@ -39,7 +39,7 @@ jobs:
 
   badging:
     runs-on: ubuntu-latest
-    if: ${{ jobs.lint.result == 'success' &&  jobs.tests.result == 'success' }}
+    if: ${{ needs.lint.result == 'success' &&  needs.tests.result == 'success' }}
     needs: [lint, tests]
     steps:
       - uses: wow-actions/add-badges@v1
