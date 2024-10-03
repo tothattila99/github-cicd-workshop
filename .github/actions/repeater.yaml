@@ -1,0 +1,17 @@
+name: 'Repeater'
+description: 'send back input'
+inputs:
+  in-var:  # id of input
+    description: 'input var'
+    required: true
+outputs:
+  out-var:
+    description: "output var"
+    value: ${{ inputs.in-var }}
+runs:
+  using: "composite"
+  steps:
+    - name: Echo message
+      id: echo-message
+      run: echo "Hello ${{ inputs.in-var }}"
+      shell: bash
