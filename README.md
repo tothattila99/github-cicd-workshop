@@ -3,7 +3,7 @@
 Exercise 7:
 <!-- [START BADGES] -->
 <!-- Please keep comment here to allow auto update -->
-![test](https://img.shields.io/badge/tests-passing-green)
+![test](https://img.shields.io/badge/tests-failing-red)
 <!-- [END BADGES] -->
 
 
