@@ -43,6 +43,7 @@ jobs:
   badging-gray:
     runs-on: ubuntu-latest
     needs: [lint, test]
+    if: ${{always()}}
     steps:
       - uses: wow-actions/add-badges@v1
         with:
@@ -72,7 +73,7 @@ jobs:
             ]
   badging-red:
     runs-on: ubuntu-latest
-    if: ${{ needs.lint.result == 'failure' ||  needs.test.result == 'failure'}}
+    if: ${{ always() && needs.lint.result == 'failure' ||  needs.test.result == 'failure'}}
     needs: [lint, test, badging-gray]
     steps:
       - uses: wow-actions/add-badges@v1
