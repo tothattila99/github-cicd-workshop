@@ -40,10 +40,25 @@ jobs:
     - name: Running flake8
       run: flake8 exercise_2/
 
+  badging-fail:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: wow-actions/add-badges@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          badges: |
+            [
+              {
+                "badge": "https://img.shields.io/badge/tests-failing-red",
+                "alt": "test"
+              }
+            ]
+
   badging:
     runs-on: ubuntu-latest
-    if: ${{ needs.lint.result == 'success' &&  needs.test.result == 'success' }}
-    needs: [lint, test]
+    if: ${{ needs.lint.result == 'success' &&  needs.test.result == 'success' && needs.badging-fail.result == 'success' }}
+    needs: [lint, test, badging-fail]
     steps:
       - uses: wow-actions/add-badges@v1
         with:
