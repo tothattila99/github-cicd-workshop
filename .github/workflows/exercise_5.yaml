@@ -12,6 +12,8 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout github repository
+        uses: actions/checkout@v4
       - uses: ./ # Uses an action in the root directory
         id: Repeater
         with:
