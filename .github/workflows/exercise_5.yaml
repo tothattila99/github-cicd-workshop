@@ -1,6 +1,9 @@
 name: E5
 
 on:
+  push:
+    branches:
+      - master
   schedule: 
     - cron: '*/1 * * * *'
 
